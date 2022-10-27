@@ -24,8 +24,16 @@ export class PokemonService {
       const pokemon = await this.pokemonModel.create( createPokemonDto );
       return pokemon;
       
-    } catch (error) {
-      this.handleExceptions( error );
+    } 
+    catch (error) {
+      if (error.code === 11000){
+        throw new BadRequestException (`pokemon existe in db ${JSON.stringify(error.keyValue)}`);
+
+      }
+      console.error();
+      throw new InternalServerErrorException(`Can' create Pokemon - ckeck server log`);
+      
+      
     }
 
   }
