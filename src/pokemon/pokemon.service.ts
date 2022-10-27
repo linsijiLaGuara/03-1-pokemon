@@ -45,7 +45,7 @@ export class PokemonService {
   }
 
   async findOne(term: string) {
-    
+    //termino de busqueda term
     let pokemon: Pokemon;
 
     if ( !isNaN(+term) ) {
