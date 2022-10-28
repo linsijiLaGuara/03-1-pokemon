@@ -91,6 +91,7 @@ export class PokemonService {
     // await pokemon.deleteOne();
     // return { id };
     // const result = await this.pokemonModel.findByIdAndDelete( id );
+    //Eliminar solo un ID
     const { deletedCount } = await this.pokemonModel.deleteOne({ _id: id });
     if ( deletedCount === 0 )
       throw new BadRequestException(`Pokemon with id "${ id }" not found`);

@@ -30,7 +30,8 @@ export class PokemonController {
     return this.pokemonService.update( term, updatePokemonDto);
   }
 
-  @Delete(':id')
+
+  //segurar que sea un numero
   remove(@Param('id', ParseMongoIdPipe ) id: string) {
     return this.pokemonService.remove( id );
   }
