@@ -49,15 +49,16 @@ export class PokemonService {
     let pokemon: Pokemon;
 
     if ( !isNaN(+term) ) {
+      //Temino de busqueda = term
       pokemon = await this.pokemonModel.findOne({ no: term });
     }
 
-    // MongoID
+    // MongoID validando 
     if ( !pokemon && isValidObjectId( term ) ) {
       pokemon = await this.pokemonModel.findById( term );
     }
 
-    // Name
+    // Name buscando que sea igual al term
     if ( !pokemon ) {
       pokemon = await this.pokemonModel.findOne({ name: term.toLowerCase().trim() })
     }
