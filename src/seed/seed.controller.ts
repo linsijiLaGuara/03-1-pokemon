@@ -9,7 +9,7 @@ export class SeedController {
 
   @Get()
     executeSEED() {
-    return this.seedService.findAll();
+    return this.seedService.executeSeed();
   }
 
 
