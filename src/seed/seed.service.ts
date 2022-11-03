@@ -18,6 +18,9 @@ constructor(
 ){}
 
  async executeSeed(){
+  this.pokemonModel.deleteMany({});//delete * from pokemon
+
+
    const {data}= await this.axios.get<PokeResponse>('https://pokeapi.co/api/v2/pokemon?limit=10');
     //insertar promesas 
 const inserPromisesArray = [];
