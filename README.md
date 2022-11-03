@@ -23,6 +23,16 @@ docker-compose up -d
 http://localhost:3000/api/v2/seed
 ```
 
+6. Clonar el archivo```.env.template ```y renombrar env 
+ 
+
+ 7.llenar las variables  de entornos definidas en ```env``` 
+
+
+ 8. ejecutar la aplicacion en dev
+ ```
+ yarn start:dev
+ ```
 ## Stack usado
 * MongoDB
 * Nest
