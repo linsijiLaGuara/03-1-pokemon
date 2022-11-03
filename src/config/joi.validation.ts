@@ -1,5 +1,5 @@
 
-import *as join  from 'Joi';
+import join from 'Joi';
 
 export const JoiValidationSchema= join.object({
     MONGODB: join.required(),
