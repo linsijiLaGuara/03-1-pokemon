@@ -18,16 +18,25 @@ constructor(
 ){}
 
  async executeSeed(){
-   const {data}= await this.axios.get<PokeResponse>('https://pokeapi.co/api/v2/pokemon?limit=1');
-    
-    data.results.forEach(async({name, url})=> {
+   const {data}= await this.axios.get<PokeResponse>('https://pokeapi.co/api/v2/pokemon?limit=10');
+    //insertar promesas 
+const inserPromisesArray = [];
+
+
+    data.results.forEach(({name, url})=> {
 
     const segments = url.split('/');
     const no = +segments [segments.length - 2];
  //inserccion lo busque en pokeomon services para insertar
-    const pokemon = await this.pokemonModel.create( {name, no} );
+   // const pokemon = await this.pokemonModel.create( {name, no} );
+     
+   inserPromisesArray.push( 
+      this.pokemonModel.create( {name, no} )
+     )
+    });
 
-    })
+    //espera que todas la promeses se inserten hace todas las insersiones de manera sinmultanea
+   await Promise.all(inserPromisesArray);
 
     return 'seed ejecutado';
   }
