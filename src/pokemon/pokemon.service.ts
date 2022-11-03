@@ -50,6 +50,7 @@ export class PokemonService {
     .sort({
       no:1
     })
+    .select('-__v')
   }
 
   async findOne(term: string) {
