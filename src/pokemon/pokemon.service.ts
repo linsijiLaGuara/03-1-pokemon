@@ -47,6 +47,9 @@ export class PokemonService {
     return this.pokemonModel.find( )
     .limit(limit)
     .skip(offset)
+    .sort({
+      no:1
+    })
   }
 
   async findOne(term: string) {
