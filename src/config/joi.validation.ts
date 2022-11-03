@@ -1,8 +1,8 @@
 
-import join from 'Joi';
+import * as Joi from 'joi';
 
-export const JoiValidationSchema= join.object({
-    MONGODB: join.required(),
-    PORT: join.number().default(3005),
-    DEFAULT_LIMIT: join.number().default(6),
+export const JoiValidationSchema = Joi.object({
+    MONGODB: Joi.required(),
+    PORT: Joi.number().default(3005),
+    DEFAULT_LIMIT: Joi.number().default(6),
 })
