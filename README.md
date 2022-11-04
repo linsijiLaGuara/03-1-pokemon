@@ -33,6 +33,13 @@ http://localhost:3000/api/v2/seed
  ```
  yarn start:dev
  ```
+
+ # Notas
+ Heroku redeploy sin cambio
+  ```
+  git commit --allow-empty -m "Tigger heroko deploy"
+  git push heroku <master|mian> 
+ ```
 ## Stack usado
 * MongoDB
 * Nest
