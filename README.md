@@ -40,6 +40,16 @@ http://localhost:3000/api/v2/seed
   git commit --allow-empty -m "Tigger heroko deploy"
   git push heroku <master|mian> 
  ```
+# production Buil 
+1. crear el archivo
+   ```
+  .env.prod
+   ```
+2. llenar las variables de entorno a produccion
+3. crear la nueva imagen
+   ```
+    docker-compose -f docker-compose.prod.yaml --env-file .env.prod up --build
+   ```
 ## Stack usado
 * MongoDB
 * Nest
